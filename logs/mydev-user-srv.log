@@ -1,0 +1,9 @@
+2025-03-01 10:23:37.132	[34mINFO[0m	app/app.go:113	start rest server
+2025-03-01 10:23:37.133	[34mINFO[0m	rpcserver/server.go:177	[grpc] server listening on: [::]:8021
+2025-03-01 10:23:37.133	[31mERROR[0m	app/app.go:130	registrar service error: Put "http://127.0.0.1:8500/v1/agent/service/register": dial tcp 127.0.0.1:8500: connect: connection refused
+2025-03-01 10:23:37.133	[31mERROR[0m	srv/app.go:64	run user app error: Put "http://127.0.0.1:8500/v1/agent/service/register": dial tcp 127.0.0.1:8500: connect: connection refused
+2025-03-01 10:24:41.408	[34mINFO[0m	app/app.go:113	start rest server
+2025-03-01 10:24:41.408	[34mINFO[0m	rpcserver/server.go:177	[grpc] server listening on: [::]:8021
+2025-03-01 10:25:03.573	[34mINFO[0m	app/app.go:159	start deregister service
+2025-03-01 10:25:03.577	[34mINFO[0m	app/app.go:171	start cancel context
+2025-03-01 10:25:03.578	[34mINFO[0m	rpcserver/server.go:189	[grpc] server stopped
