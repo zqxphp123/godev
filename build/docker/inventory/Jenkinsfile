@@ -1,0 +1,39 @@
+pipeline{
+    agent any
+
+    environment{
+        //仓库地址
+        REGISTRY = "registry.cn-hangzhou.aliyuncs.com"
+        SERVICE = "inventoryserver"
+        SERVER_NAME = "inventory"
+        USERNAME = "dreamszhai"
+        PASSWORD = "asdf1234"
+    }
+
+    stages {
+        stage("docker login"){
+            steps {
+                echo "=======docker login======"
+                sh """
+                    docker login --username=$USERNAME --password=$PASSWORD registry.cn-hangzhou.aliyuncs.com
+                """
+            }
+        }
+        stage("docker build"){
+            steps {
+                echo "=======docker build======"
+                sh """
+                    docker build -f build/docker/$SERVER_NAME/Dockerfile -t $REGISTRY/jzin/jzin:$SERVICE\${version}.\${branch} .
+                """
+            }
+        }
+        stage("docker push"){
+            steps {
+                echo "=======docker push======"
+                sh """
+                    docker push $REGISTRY/jzin/jzin:$SERVICE\${version}.\${branch}
+                """
+            }
+        }
+    }
+}
